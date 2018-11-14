@@ -12,10 +12,12 @@
 default: &default
   adapter: mysql2
   encoding: utf8
-  pool: 5
+  database: bug_app
   username: root
-  password:
-  socket: /tmp/mysql.sock
+  password: ENV['PASSWORD'],
+  host: localhost
+  port: 3306
+  # socket: /tmp/mysql.sock
 
 development:
   <<: *default
@@ -50,5 +52,5 @@ test:
 production:
   <<: *default
   database: bug_app_production
-  username: bug_app
+  username: root
   password: <%= ENV['BUG_APP_DATABASE_PASSWORD'] %>
