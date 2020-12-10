@@ -3,7 +3,7 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blog = Blog.all
+    @blogs = Blog.all
   end
 
   # GET /blogs/1
