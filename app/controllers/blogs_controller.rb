@@ -47,7 +47,13 @@ class BlogsController < ApplicationController
   # DELETE /blogs/1.json
   def destroy
     @blog.destroy
+
+    ###
+    @blogs = Blog.all
     render :index
+    ###
+
+    # (別解) redirect_to blogs_path
   end
 
   private
